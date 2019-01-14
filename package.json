@@ -1,0 +1,22 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taras-Antoniw/FriendFinder.git"
+  },
+  "author": "TA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Taras-Antoniw/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Taras-Antoniw/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
