@@ -75,6 +75,42 @@ app.get("/listfriends", function(req, res) {
   return res.json(friends);
 });
 
+app.post("/listfriends", function(req, res) {
+  var newfriend = req.body;
+  console.log(newfriend);
+  friends.push(newfriend);
+  res.json(newfriend);
+
+  //find  match
+
+  var total = friends.length-1;
+  var bestmatch = 50;
+  var deltamatch = 0;
+  var bestFriend = "";
+  var bestPicture = "";
+  for (i=0; i<total-1; i++) {
+        d1=Math.abs(parseInt(friends[i].q1)-parseInt(friends[total].q1));
+        d2=Math.abs(parseInt(friends[i].q2)-parseInt(friends[total].q2));
+        d3=Math.abs(parseInt(friends[i].q3)-parseInt(friends[total].q3));
+        d4=Math.abs(parseInt(friends[i].q4)-parseInt(friends[total].q4));
+        d5=Math.abs(parseInt(friends[i].q5)-parseInt(friends[total].q5));
+        d6=Math.abs(parseInt(friends[i].q6)-parseInt(friends[total].q6));
+        d7=Math.abs(parseInt(friends[i].q7)-parseInt(friends[total].q7));
+        d8=Math.abs(parseInt(friends[i].q8)-parseInt(friends[total].q8));
+        d9=Math.abs(parseInt(friends[i].q9)-parseInt(friends[total].q9));
+        d10=Math.abs(parseInt(friends[i].q10)-parseInt(friends[total].q10));
+        deltamatch = d1+d2+d3+d4+d5+d6+d7+d8+d9+d10;
+        if (deltamatch<bestmatch) {
+          bestmatch = deltamatch;
+          bestFriend = friends[i].name;
+          bestPicture = friends[i].picture;
+        }
+  }
+  console.log("Done");
+  console.log("Your best friend is:"+bestFriend);
+  console.log("Picture of your best friend: "+bestPicture);
+  alert("Your best friend is:");
+});
 
 
 
