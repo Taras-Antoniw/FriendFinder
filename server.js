@@ -100,7 +100,7 @@ app.post("/listfriends", function(req, res) {
         d9=Math.abs(parseInt(friends[i].q9)-parseInt(friends[total].q9));
         d10=Math.abs(parseInt(friends[i].q10)-parseInt(friends[total].q10));
         deltamatch = d1+d2+d3+d4+d5+d6+d7+d8+d9+d10;
-        if (deltamatch<bestmatch) {
+        if (deltamatch<=bestmatch) {
           bestmatch = deltamatch;
           bestFriend = friends[i].name;
           bestPicture = friends[i].picture;
@@ -109,7 +109,7 @@ app.post("/listfriends", function(req, res) {
   console.log("Done");
   console.log("Your best friend is:"+bestFriend);
   console.log("Picture of your best friend: "+bestPicture);
-  alert("Your best friend is:");
+  return 
 });
 
 
