@@ -79,7 +79,7 @@ app.post("/listfriends", function(req, res) {
   var newfriend = req.body;
   console.log(newfriend);
   friends.push(newfriend);
-  res.json(newfriend);
+  // res.json(newfriend);
 
   //find  match
 
@@ -109,7 +109,12 @@ app.post("/listfriends", function(req, res) {
   console.log("Done");
   console.log("Your best friend is:"+bestFriend);
   console.log("Picture of your best friend: "+bestPicture);
-  return 
+  res.json({
+    data :{
+      bestFriend,
+      bestPicture
+    }
+  })
 });
 
 

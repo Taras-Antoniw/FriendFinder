@@ -130,9 +130,12 @@
 
       // Pass new reservation info to server
       $.post("/listfriends", newFriend)
-        .then(function(data) {
-          console.log("survey.html", data);
+        .then(function(result) {
+          console.log("survey.html", result);
           //alert("Adding friend");
+          //Open Modal 
+          alert(result.data.bestFriend);
+
         });
     });
   </script>
